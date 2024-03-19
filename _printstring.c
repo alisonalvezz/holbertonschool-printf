@@ -7,7 +7,7 @@
  *Return: the string that was traveled by counter
  */
 
-char _printstring(char *string, ...)
+int _printstring(char *string)
 {
 	int counter = 0;
 
@@ -24,6 +24,5 @@ char _printstring(char *string, ...)
 			write(1, &string[counter], 1);
 		}
 	}
-
 	return (counter); /**retorna el numero de caracteres printeados*/
 }

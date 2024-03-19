@@ -30,19 +30,32 @@ int _printf(const char *format, ...)
 		else
 		{
 			i++;
-				if (format[i] == 'c' || format[i] == 's' || format[i] == '%')
+			if (format[i] == 'c')
+				{
+					char c = va_arg(list, int);
+
+					write(1, &c, 1);
+					counter++;
+				}
+				else if (format[i] == 's')
 				{
 					char *string = va_arg(list, char *);
 
-					counter = counter + print_letters(format[i], string);
+					counter = counter +_printstring(string);
 				}
+				else if (format[i] == '%')
+				{
+					write(1, "%", 1);
+					counter++;
 				}
 		}
+	}
+
 	if (last_char == '\n')
 	{
 		write(1, "\n", 2);
-		counter++;
 	}
+
 	va_end(list);
 
 	return (counter);

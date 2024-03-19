@@ -7,7 +7,7 @@
 #include <unistd.h>
 
 int _printf(const char *format, ...);
-int print_letters(char format, char *string);
+int _printstring(char *string);
 
 
 #endif
