@@ -1,31 +1,42 @@
 #include "main.h"
 
-int _printf (char *format, ...)
+/**
+ * _printf - emulates printf function
+ * @format: the format that is in the input (s, c, %, i, etc)
+ *Return: .
+ */
+
+int _printf(const char *format, ...)
 {
 	va_list list;
-	va_start(list, 1);
-
+	
 	int i;
 
-	switch (i = 0; format[i] != '\0'; i++)
+	va_start(list, int);
+
+	for (i = 0; format[i] != '\0'; i++)
 	{
-		case 1:
-			for (i = 0; format[i] != '\0'; i++)
-		case 2:
-			format[i] != '%'
-			write(1, &format[i], 1); /** si no encuentra un %, imprime la string como la recibio en el input*/
-			break;
-		case 3:
-			format[i++] == 'c'
+		if (format[i] != '%')
+		{
+			write(1, &format[i], 1);/**si no ve un % imprime la string como recibio*/
+		}
+
+		else if (format[i++] == 'c')
+		{
 			va_arg(list, char);
-			break;
-		case 4:
-			format[i++] == 's'
+		}
+		else if (format[i++] == 's')
+		{
 			va_arg(list, string);
-			break;
-		case 5:
-			format[i++] == '%'
-			va_arg(list, percent)
-			break;
+			_printstring(list, string);
+		}
+		else if (format[i++] == '%')
+		{
+			va_arg(list, percent);
+		}
 	}
+
+	va_end(list);
+
+	return (0);
 }
