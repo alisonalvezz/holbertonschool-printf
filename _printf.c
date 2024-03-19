@@ -10,13 +10,9 @@ int _printf(const char *format, ...)
 {
 	va_list list;
 
-	int last_char = 0;
-
 	int i;
 
 	int counter = 0;
-
-	last_char = format[strlen(format) - 1];
 
 	va_start (list, format);
 
@@ -50,12 +46,6 @@ int _printf(const char *format, ...)
 				}
 		}
 	}
-
-	if (last_char == '\n')
-	{
-		write(1, "\n", 2);
-	}
-
 	va_end(list);
 
 	return (counter);
