@@ -21,6 +21,7 @@ int _printf(const char *format, ...)
 		if (format[i] != '%')
 		{
 			write(1, &format[i], 1);/**si no ve un % imprime la string como recibio*/
+			i++;
 			counter++;
 		}
 		else
