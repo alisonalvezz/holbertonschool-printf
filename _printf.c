@@ -35,7 +35,6 @@ int _printf(const char *format, ...)
 					char *string = va_arg(list, char *);
 
 					counter = counter + print_letters(format[i], string);
-					last_char = format[i];
 				}
 				}
 		}
