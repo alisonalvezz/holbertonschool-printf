@@ -10,18 +10,18 @@
 char _printstring(char *string, ...)
 {	va_list list;
 
-	int c;
+	int counter;
 
 	va_start(list, string);
 
 	if (string)
 	{
-		for (c = 0; string[c] != '\0'; c++)
+		for (counter = 0; string[counter] != '\0'; counter++)
 		{
-			write(1, &string[c], 1);
+			write(1, &string[counter], 1);
 		}
 	}
-	return (c); /**retorna el numero de caracteres printeados*/
+	return (counter); /**retorna el numero de caracteres printeados*/
 
 	va_end(list);
 }

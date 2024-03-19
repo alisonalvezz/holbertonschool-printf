@@ -12,6 +12,8 @@ int _printf(const char *format, ...)
 
 	int i;
 
+	int counter = 0;
+
 	va_start(list, format);
 
 	for (i = 0; format[i] != '\0'; i++)
@@ -19,6 +21,7 @@ int _printf(const char *format, ...)
 		if (format[i] != '%')
 		{
 			write(1, &format[i], 1);/**si no ve un % imprime la string como recibio*/
+			counter++;
 		}
 
 		else
@@ -29,6 +32,7 @@ int _printf(const char *format, ...)
 					char c = va_arg(list, int);
 
 					write(1, &c, 1);
+					counter++;
 				}
 				else if (format[i] == 's')
 				{
@@ -39,11 +43,12 @@ int _printf(const char *format, ...)
 				else if (format[i] == '%')
 				{
 					write(1, "%", 1);
+					counter++;
 				}
 		}
 	}
 
 	va_end(list);
 
-	return (0);
+	return (counter);
 }
