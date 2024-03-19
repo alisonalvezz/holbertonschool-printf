@@ -4,7 +4,7 @@
 /**
  * _printstring - prints a string
  * @string: string to print
- *Return: the string that was traveled by c
+ *Return: the string that was traveled by counter
  */
 
 char _printstring(char *string, ...)
