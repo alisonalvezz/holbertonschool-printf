@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 	
 	int i;
 
-	va_start(list, int);
+	va_start(list, format);
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
@@ -20,19 +20,24 @@ int _printf(const char *format, ...)
 		{
 			write(1, &format[i], 1);/**si no ve un % imprime la string como recibio*/
 		}
-
-		else if (format[i++] == 'c')
+		
+		else
 		{
-			va_arg(list, char);
-		}
-		else if (format[i++] == 's')
-		{
-			va_arg(list, string);
-			_printstring(list, string);
-		}
-		else if (format[i++] == '%')
-		{
-			va_arg(list, percent);
+			i++
+				if (format[i] == 'c')
+				{
+					char c = va_arg(list, int);
+					write(1, &c, 1);
+				}
+				else if (format[i] == 's')
+				{
+					char *string = va_arg(list, char *);
+					_printstring(string);
+				}
+				else if (format[i] == '%')
+				{
+					write(1, '%', 1);
+				}
 		}
 	}
 

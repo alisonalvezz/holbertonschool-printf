@@ -16,12 +16,12 @@ char _printstring(char *string, ...)
 
 	if (string)
 	{
-		for (c = 0; string[c] = '\0'; c++)
+		for (c = 0; string[c] != '\0'; c++)
 		{
 			write(1, &string[c], 1);
 		}
 	}
-	return (string[c]);
+	return (c); /**retorna el numero de caracteres printeados*/
 
 	va_end(list);
 }
