@@ -6,8 +6,8 @@
 #include <string.h>
 #include <unistd.h>
 
-char _printstring(char *string, ...);
 int _printf(const char *format, ...);
+int print_letters(char format, char *string);
 
 
 #endif

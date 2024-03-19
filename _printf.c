@@ -10,11 +10,15 @@ int _printf(const char *format, ...)
 {
 	va_list list;
 
+	int last_char = 0;
+
 	int i;
 
 	int counter = 0;
 
-	va_start(list, format);
+	last_char = format[strlen(format) - 1];
+
+	va_start (list, format);
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
@@ -26,22 +30,19 @@ int _printf(const char *format, ...)
 		else
 		{
 			i++;
-				if (format[i] == 'c')
-				{char c = va_arg(list, int);
-
-					write(1, &c, 1);
-					counter++;
-				}
-				else if (format[i] == 's')
-				{char *string = va_arg(list, char *);
-					counter = counter + _printstring(string);
-				}
-				else if (format[i] == '%')
+				if (format[i] == 'c' || format[i] == 's' || format[i] == '%')
 				{
-					write(1, "%", 1);
-					counter++;
+					char *string = va_arg(list, char *);
+
+					counter = counter + print_letters(format[i], string);
+					last_char = format[i];
+				}
 				}
 		}
+	if (last_char == '\n')
+	{
+		write(1, "\n", 2);
+		counter++;
 	}
 	va_end(list);
 

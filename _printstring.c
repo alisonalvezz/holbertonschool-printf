@@ -24,5 +24,6 @@ char _printstring(char *string, ...)
 			write(1, &string[counter], 1);
 		}
 	}
+
 	return (counter); /**retorna el numero de caracteres printeados*/
 }
