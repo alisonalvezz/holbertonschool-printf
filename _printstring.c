@@ -8,11 +8,14 @@
  */
 
 char _printstring(char *string, ...)
-{	va_list list;
-
+{
 	int counter = 0;
 
-	va_start(list, string);
+	if (string == NULL)
+	{
+		write(1, "(null)", 6);
+		return (6); /**lenght of (null)*/
+	}
 
 	if (string)
 	{
@@ -22,6 +25,4 @@ char _printstring(char *string, ...)
 		}
 	}
 	return (counter); /**retorna el numero de caracteres printeados*/
-
-	va_end(list);
 }
