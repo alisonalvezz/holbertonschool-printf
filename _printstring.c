@@ -19,8 +19,8 @@ char _printstring(char *string, ...)
 		for (counter = 0; string[counter] != '\0'; counter++)
 		{
 			write(1, &string[counter], 1);
-			counter++;
 		}
+		counter++;
 	}
 	return (counter); /**retorna el numero de caracteres printeados*/
 
