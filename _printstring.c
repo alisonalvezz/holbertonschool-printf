@@ -10,7 +10,7 @@
 char _printstring(char *string, ...)
 {	va_list list;
 
-	int counter;
+	int counter = 0;
 
 	va_start(list, string);
 
@@ -20,7 +20,6 @@ char _printstring(char *string, ...)
 		{
 			write(1, &string[counter], 1);
 		}
-		counter++;
 	}
 	return (counter); /**retorna el numero de caracteres printeados*/
 

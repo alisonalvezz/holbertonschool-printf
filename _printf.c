@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 				{
 					char *string = va_arg(list, char *);
 
-					_printstring(string);
+					counter = counter +_printstring(string);
 				}
 				else if (format[i] == '%')
 				{
