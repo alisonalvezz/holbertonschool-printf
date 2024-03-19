@@ -30,7 +30,7 @@ int print_letters(char format, char *string)
 			}
 			break;
 		case 'c':
-			write(1, string, 1);
+			write(1, &string, 1);
 			counter++;
 			break;
 		case '%':
