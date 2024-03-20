@@ -3,7 +3,7 @@
 int print_numbers(long int n)
 {
 	int count = 0;
-	
+
 	char digit;
 
 	if (n < 0)
