@@ -28,8 +28,7 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i] == '\0')
 			{
-				counter = counter + print_percent();
-				break;
+				return ('\0');
 			}
 			if (format[i] == 'c')
 				{
