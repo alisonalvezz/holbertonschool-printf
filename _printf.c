@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 			if (format[i] == '\0')
 			{
 				break;
-				counter++
+				counter++;
 			}
 			if (format[i] == 'c')
 				{
