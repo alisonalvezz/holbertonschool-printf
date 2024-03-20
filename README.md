@@ -9,8 +9,9 @@ It allows formatted output to be printed to the standard output, supporting form
 
 ## File structure
 
-- 'main.h': Header file that contains function prototypes and necessary includes
-- 'main.c': File that contains all the test cases for the "_printf" function
+- 'main.h': Header file that contains function prototypes and necessary includes.
+- 'main.c': File that contains all the test cases for the "_printf" function.
+- 'man_3_printf': File that contains the Manual for the utilization of the '_printf' function.
 - '_printf.c': Contains the implementation of the 'printf' function and its supporting functions.
 - '_printstring': Prints a string to the standard output.
 - 'print_char': Prints a single character or string depending on the format specifier.
