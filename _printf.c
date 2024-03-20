@@ -27,7 +27,9 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			if (format[i] == '\0')
-				break;
+			{
+				write(1, "(null)", 6);
+			}
 			if (format[i] == 'c')
 				{
 					char c = va_arg(list, int);
