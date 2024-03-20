@@ -29,7 +29,6 @@ int _printf(const char *format, ...)
 			if (format[i] == '\0')
 			{
 				break;
-				counter++;
 			}
 			if (format[i] == 'c')
 				{
