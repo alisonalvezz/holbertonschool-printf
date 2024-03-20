@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * print_numbers - prints numbers
+ * @n: the numbers to print
+ * Return: the numbers
+ */
+
 int print_numbers(long int n)
 {
 	int count = 0;
