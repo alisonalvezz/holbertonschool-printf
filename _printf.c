@@ -15,7 +15,6 @@ int _printf(const char *format, ...)
 	int counter = 0;
 
 	va_start(list, format);
-
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
@@ -27,9 +26,7 @@ int _printf(const char *format, ...)
 		{
 			i++;
 				if (format[i] == '\0')
-				{
 					return (-1);
-				}
 				else if (format[i] == 'c' || format[i] == 's' || format[i] == '%')
 				{
 					counter = counter + print_char(format[i], list);
