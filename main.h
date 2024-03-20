@@ -9,6 +9,7 @@
 int _printf(const char *format, ...);
 int _printstring(char *string);
 int print_percent(void);
+int print_char(char c, va_list list);
 
 
 #endif
