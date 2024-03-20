@@ -48,6 +48,13 @@ int _printf(const char *format, ...)
 					write(1, "%", 1);
 					counter++;
 				}
+			else
+			{
+				write(1, "%", 1);
+					counter++;
+				write(1, &format[i], 1);
+					counter++;
+			}
 		}
 	}
 	va_end(list);
