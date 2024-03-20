@@ -6,9 +6,9 @@
  * Return: the numbers
  */
 
-int print_numbers(long int n)
+size_t print_numbers(long int n)
 {
-	int count = 0;
+	size_t count = 0;
 
 	char digit;
 

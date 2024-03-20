@@ -10,7 +10,7 @@ int _printf(const char *format, ...);
 int _printstring(char *string);
 int print_percent(void);
 int print_char(char c, va_list list);
-int print_numbers(long int n);
+size_t print_numbers(long int n);
 
 
 #endif
