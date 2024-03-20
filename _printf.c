@@ -53,6 +53,8 @@ int _printf(const char *format, ...)
 			{
 				write(1, "%", 1);
 					counter++;
+				write(1, &format, 1);
+				counter++;
 			}
 		}
 	}
