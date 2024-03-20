@@ -37,7 +37,9 @@ int _printf(const char *format, ...)
 				}
 				else if (format[i] == 'd' || format[i] == 'i')
 				{
-					counter = counter + print_numbers(format[i]);
+					long int number = va_arg(list, long int);
+
+					counter = counter + print_numbers(number);
 				}
 				else
 				{
