@@ -1,0 +1,87 @@
+_printf Manual
+
+Desciption:
+The "_printf" function tries to emulate the behavior of the "printf" function in C, that allows formatted output to be printed to the standard output.
+It supports a lot of format specifiers such as "%s", "%d", "%i", "%c" and "%%"
+
+Prototypes:
+
+int _printf(const char *format, ...)
+
+Emulates the behavior of the standard printf function.
+Allows multiple format specifiers such as "%c" for characters, "%s" for strings, "%d" and "%i" for numbers and "%%" for printing a single "%".
+
+@format: is a string that contains format specifiers
+@... allows us to put aditional arguments that we may need
+
+Return: upon succesfully printing, the function returns the number of characters printed. If an error ocurred, it returns -1.
+
+ERRORS: The handling of negative signed integers had errors.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+int _printstring(char *string)
+
+This function prints a string that was provided to the standard output.
+
+@string: the string to be printed
+
+Return: upon succesfully printing, the function returns the number of characters printed. If a string is NULL, it prints "(null)" and returns 6 (the lenght of (null)).
+
+ERRORS: No errors were found.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+int print_char(char c, va list_list)
+
+This functions prints a provided character to the standard output.
+@c: the caracter to be printed.
+@list: the va_list containing additional arguments.
+
+Return: upon successful printing, the function returns 1. If an error ocurrs, it returns -1.
+
+ERRORS: No errors were found
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+int print_numbers(long int n)
+
+This function prints a signed integer that was provided to the standard output.
+
+@n: the signed integer to be printed
+
+Return: upon sucessfully printed, the functions returns the number of characters printed.
+
+ERRORS: The handling of negative signed integers had errors.
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+int print_percent(void)
+
+This function prints a single "%" character to the standard output.
+
+Return: Upon successful printing, the function returns 1.
+
+ERRORS: No errors were found.
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Usage:
+
+To use "_printf", include the "main.h" header file and call the function with the desired format string and arguments.
+Example:
+
+int main(void)
+{
+    int number = 10;
+    char chr = 'B'
+    char *str = "Hola, Mundo!"
+
+_printf("Number: "%d", Character: "%c", String: "%s"\n", number, chr, str)
+
+return (0);
+}
+
+This will print:
+
+"Number: 10, Character: B, String: Hola, Mundo!"

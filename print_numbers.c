@@ -3,12 +3,11 @@
 /**
  * print_numbers - prints numbers
  * @n: the numbers to print
- * Return: the numbers
+ * Return: the numbers to print
  */
-
-size_t print_numbers(long int n)
+int print_numbers(long int n)
 {
-	size_t count = 0;
+	int count = 0;
 
 	char digit;
 
