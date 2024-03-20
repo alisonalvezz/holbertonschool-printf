@@ -10,7 +10,7 @@ int print_numbers(long int n)
 	{
 		write(1, "-", 1);
 		count++;
-		n = -n
+		n = -n;
 	}
 
 	if (n / 10 != 0)

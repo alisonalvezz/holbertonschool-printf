@@ -35,6 +35,10 @@ int _printf(const char *format, ...)
 				{
 					counter = counter + print_char(format[i], list);
 				}
+				else if (format[i] == 'd' || format[i] == 'i')
+				{
+					counter = counter + print_numbers(format[i]);
+				}
 				else
 				{
 					write(1, "%", 1);
