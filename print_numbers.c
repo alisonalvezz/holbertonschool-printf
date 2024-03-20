@@ -13,14 +13,10 @@ int print_numbers(long int n)
 		n = -n; /** convierte el numero a su valor absoluto*/
 	}
 
-	if (n / 10 == 0)
+	if (n / 10 != 0)
 	{
-		digit = n % 10 + '0';
-		write(1, &digit, 1);
-		return (1);
+		count = count + print_numbers(n / 10);
 	}
-
-	count =  print_numbers(n / 10);
 
 	digit = n % 10 + '0';
 	write(1, &digit, 1);
