@@ -29,18 +29,18 @@ int _printf(const char *format, ...)
 			if (format[i] == '\0')
 			{
 				write(1, "%", 1);
+				counter++;
+				break;
 			}
 			if (format[i] == 'c')
 				{
 					char c = va_arg(list, int);
-
 					write(1, &c, 1);
 					counter++;
 				}
 				else if (format[i] == 's')
 				{
 					char *string = va_arg(list, char *);
-
 					counter = counter +_printstring(string);
 				}
 				else if (format[i] == '%')
@@ -52,12 +52,11 @@ int _printf(const char *format, ...)
 			{
 				write(1, "%", 1);
 					counter++;
-				write(1, &format, 1);
-				counter++;
+				write(1, &format[i], 1);
+					counter++;
 			}
 		}
 	}
 	va_end(list);
-
 	return (counter);
 }
