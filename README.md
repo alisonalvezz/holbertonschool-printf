@@ -19,6 +19,9 @@ It allows formatted output to be printed to the standard output, supporting form
 - 'print_percent': Handles printing a single "%" character to the standard output.
 - 'README.md': This file, providing an overview of the project.
 
+  https://github.com/alisonalvezz/holbertonschool-printf/assets/159053351/906d9941-87b3-402b-a888-f257ae77b58d
+
+
 ## Usage
 
 To use the '_printf' function in your C program:
